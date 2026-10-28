@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+    <title>Levantamiento de Requisitos - Proyecto RUNCTY</title>
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <header class="hero-header">
+      <div class="logo-container">
+        <img src="images/utpl.png" alt="Logo UTPL" class="header-logo">
+      </div>
+      <h1>Levantamiento de Requisitos</h1>
+      <p class="subtitle">Proyecto RUNCTY - Ingeniería Web</p>
+      <div class="logo-container">
+        <img src="images/logoRUNCTY.jpeg" alt="Logo Running" class="header-logo">
+      </div>
+      <a
+        href="https://www.figma.com/make/gIfoqALJYSt6hu2ZyHCxu8/Prototipo-RUNCTY-Web-y-M%C3%B3vil?t=76EYvWF3TbzVXDP3-1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-figma"
+      >
+        🎨 Ver Prototipo en Figma
+      </a>
+    </header>
+
+    <main class="main-container">
+      <section class="card meta-info">
+        <h2 class="visually-hidden">Información General</h2>
+        <div class="info-grid">
+          <div>
+            <h3>Estudiantes</h3>
+            <ul>
+              <li>Joel Domínguez Ochoa</li>
+              <li>Marcelo Pico Benitez</li>
+              <li>Lennin Salinas Quinche</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Detalles del Curso</h3>
+            <p><strong>Docente:</strong> Ing. Diana Torres Guarnizo</p>
+            <p><strong>Carrera:</strong> Computación (Oct/2026 - Feb/2027)</p>
+            <p><strong>Fecha:</strong> 20/10/2026</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Descripción del proyecto</h2>
+        <p>
+          RUNCTY es un prototipo dirigido a los corredores y al Club Deportivo
+          Gacelas Running Team que coloca la seguridad de la ruta y del horario
+          como el elemento central de la planificación del entrenamiento. Esta
+          versión funciona en la ciudad de Loja y queda preparada para habilitar
+          otras ciudades en el futuro.
+        </p>
+        <p>
+          El sistema tiene tres partes que comparten un mismo servidor y una
+          misma base de datos: una aplicación móvil para Android, con la que el
+          corredor planifica y graba sus entrenamientos. Una aplicación web, que
+          ofrece el planificador, un explorador público de rutas y espacios
+          recomendados de Loja, el panel del club y la administración. Y un
+          servidor con una API REST que calcula el índice de seguridad.
+        </p>
+        <p>
+          El corredor indica la distancia, el horario y su nivel (por ejemplo: 5
+          km, 05:30, principiante) y el sistema le recomienda las rutas
+          establecidas de la ciudad ordenadas por su índice de seguridad, junto
+          con los espacios recomendados disponibles a esa hora. Cada ruta
+          muestra el nivel de sus tramos y los factores que lo determinan.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Alcance inicial del proyecto</h2>
+        <p>
+          El proyecto RUNCTY contempla el desarrollo de un prototipo funcional
+          compuesto por una aplicación web y una aplicación móvil para Android,
+          dirigido inicialmente a los corredores de la ciudad de Loja y al Club
+          Deportivo Gacelas Running Team. Ambas aplicaciones compartirán
+          información mediante un servidor y una base de datos.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Identificación de Usuarios</h2>
+        <div class="user-roles">
+          <div class="role-badge">🏃 Corredor (Final)</div>
+          <div class="role-badge">🛡️ Admin Club (Gestor)</div>
+          <div class="role-badge">⚙️ Admin Sistema (Técnico)</div>
+          <div class="role-badge">👥 Contacto Confianza (Externo)</div>
+          <div class="role-badge">🌐 Visitante (Sin cuenta)</div>
+        </div>
+      </section>
+
+      <!-- Botones de pestañas superiores integrados en el flujo -->
+      <div class="tab-buttons">
+        <button
+          type="button"
+          class="tab-btn active-rf"
+          data-tab="rf"
+          onclick="showTab('rf')"
+        >
+          ⚙️ Req. Funcionales
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          data-tab="rnf"
+          onclick="showTab('rnf')"
+        >
+          🛡️ Req. No Funcionales
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          data-tab="tech"
+          onclick="showTab('tech')"
+        >
+          🧩 Tecnología
+        </button>
+      </div>
+
+      <section id="rf" class="card anchor-section tab-panel active">
+        <span class="badge badge-rf">Sección Clave</span>
+        <h2>Requisitos Funcionales</h2>
+
+        <h3>Aplicación Web</h3>
+        <ul>
+          <li>
+            Registro e inicio de sesión de usuarios por rol (corredor, admin
+            club, admin sistema).
+          </li>
+          <li>
+            Mapa interactivo de Loja para visualizar rutas y espacios
+            recomendados.
+          </li>
+          <li>
+            Catálogo de rutas con distancia, dificultad y condiciones de
+            seguridad.
+          </li>
+          <li>
+            Recomendación de rutas según la distancia, horario y nivel del
+            corredor.
+          </li>
+          <li>Índice de seguridad referencial (0 a 100).</li>
+          <li>Registro y moderación de incidentes.</li>
+          <li>
+            Panel administrativo y espacios publicitarios para patrocinadores.
+          </li>
+        </ul>
+
+        <h3>Aplicación Móvil para Android</h3>
+        <ul>
+          <li>Consulta de mapa interactivo y rutas según horario.</li>
+          <li>
+            Planificación de entrenamientos y registro por GPS (distancia,
+            tiempo, ritmo).
+          </li>
+          <li>Grabación en segundo plano y almacenamiento offline temporal.</li>
+          <li>Contactos de confianza y transmisión de ubicación en vivo.</li>
+          <li>Alerta SOS por correo, llamadas al 911 y mensaje a WhatsApp.</li>
+        </ul>
+
+        <div class="rf-list">
+          <h4>Desglose de Requisitos Funcionales (RF01 - RF23)</h4>
+
+          <div class="rf-item">
+            <strong>RF01 - Registrar cuentas:</strong> Permite crear cuenta de
+            corredor con validación de edad (15+ años).
+          </div>
+          <div class="rf-item">
+            <strong>RF02 - Verificar correo:</strong> Activa la cuenta mediante
+            enlace enviado al correo.
+          </div>
+          <div class="rf-item">
+            <strong>RF03 - Iniciar sesión:</strong> Autenticación por correo y
+            contraseña según rol.
+          </div>
+          <div class="rf-item">
+            <strong>RF04 - Consultar el mapa:</strong> Mapa interactivo con
+            zoom, desplazamiento y selección de rutas.
+          </div>
+          <div class="rf-item">
+            <strong>RF05 - Consultar catálogo:</strong> Vista pública de rutas
+            con distancia y dificultad.
+          </div>
+          <div class="rf-item">
+            <strong>RF06 - Consultar una ruta:</strong> Ficha detallada con
+            índice de seguridad según horario.
+          </div>
+          <div class="rf-item">
+            <strong>RF07 - Consultar espacios:</strong> Muestra espacios
+            verificados del club con horarios de uso.
+          </div>
+          <div class="rf-item">
+            <strong>RF08 - Calcular índice de seguridad:</strong> Algoritmo
+            referencial de 0 a 100 por tramo y hora.
+          </div>
+          <div class="rf-item">
+            <strong>RF09 - Recomendar rutas:</strong> Sugiere hasta 5 opciones
+            adaptadas al perfil del corredor.
+          </div>
+          <div class="rf-item">
+            <strong>RF10 - Planificar trayecto:</strong> Calcula la ruta entre
+            dos puntos priorizando tramos más seguros.
+          </div>
+          <div class="rf-item">
+            <strong>RF11 a RF17 - Gestión del Club:</strong> Publicar rutas
+            oficiales, gestionar zonas de riesgo, moderación de reportes y
+            banners publicitarios.
+          </div>
+          <div class="rf-item">
+            <strong>RF18 a RF23 - Entrenamiento y Emergencia:</strong> Grabación
+            GPS, historial, contactos de confianza (máx 5), ubicación en vivo y
+            botón SOS.
+          </div>
+        </div>
+      </section>
+
+      <section id="rnf" class="card anchor-section tab-panel">
+        <span class="badge badge-rnf">Calidad y Seguridad</span>
+        <h2>Requisitos No Funcionales</h2>
+
+        <div class="rnf-grid">
+          <div class="rnf-card">
+            <h3>RNF01 &amp; RNF02 - Seguridad</h3>
+            <p>
+              Hash adaptativo con sal para contraseñas y cifrado de
+              comunicaciones TLS 1.2+.
+            </p>
+          </div>
+          <div class="rnf-card">
+            <h3>RNF03 &amp; RNF04 - Privacidad</h3>
+            <p>
+              Control de acceso basado en roles y privacidad por defecto de
+              ubicaciones y trayectos.
+            </p>
+          </div>
+          <div class="rnf-card">
+            <h3>RNF05 &amp; RNF06 - Usabilidad</h3>
+            <p>
+              Planificación en menos de 3 minutos para nuevos usuarios y
+              cumplimiento de accesibilidad WCAG 2.1 AA.
+            </p>
+          </div>
+          <div class="rnf-card">
+            <h3>RNF07 &amp; RNF08 - Rendimiento</h3>
+            <p>
+              Respuesta en &lt; 5s para el 95% de solicitudes con 50 usuarios
+              concurrentes. Soporte en Chrome, Firefox, Edge y Safari.
+            </p>
+          </div>
+          <div class="rnf-card">
+            <h3>RNF09 &amp; RNF10 - Compatibilidad</h3>
+            <p>
+              Soporte para Android 10+ y disponibilidad del prototipo del 95%
+              durante la prueba piloto.
+            </p>
+          </div>
+          <div class="rnf-card">
+            <h3>RNF11 &amp; RNF12 - Resiliencia</h3>
+            <p>
+              Guardado local de puntos GPS sin conexión y advertencias claras
+              sobre el carácter referencial del índice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tech" class="card anchor-section tab-panel">
+        <h2>Tecnologías Utilizadas en RUNCTY</h2>
+        <div class="table-responsive">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Tecnología</th>
+                <th>Uso en el proyecto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TypeScript</td>
+                <td>Lenguaje principal (Web, Móvil y Backend)</td>
+              </tr>
+              <tr>
+                <td>React &amp; Expo</td>
+                <td>Interfaz Web y App Android</td>
+              </tr>
+              <tr>
+                <td>Tailwind CSS</td>
+                <td>Diseño de interfaz y estilos adaptables</td>
+              </tr>
+              <tr>
+                <td>Node.js &amp; NestJS</td>
+                <td>Servidor REST API</td>
+              </tr>
+              <tr>
+                <td>PostgreSQL &amp; Prisma</td>
+                <td>Base de datos y ORM</td>
+              </tr>
+              <tr>
+                <td>OpenStreetMap &amp; MapLibre</td>
+                <td>Mapas interactivos y geolocalización</td>
+              </tr>
+              <tr>
+                <td>Supabase / Render / Vercel</td>
+                <td>Infraestructura en la nube</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function showTab(name) {
+        document.querySelectorAll(".tab-panel").forEach(function (panel) {
+          panel.classList.toggle("active", panel.id === name);
+        });
+        document.querySelectorAll(".tab-btn").forEach(function (btn) {
+          btn.classList.remove("active-rf", "active-rnf", "active-tech");
+          if (btn.dataset.tab === name) btn.classList.add("active-" + name);
+        });
+        var panel = document.getElementById(name);
+        if (panel) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    </script>
+  </body>
+</html>
